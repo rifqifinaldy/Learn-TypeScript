@@ -1,7 +1,10 @@
-var myName = 'Rifqi Finaldy';
-console.log(myName);
-var inputs = document.querySelectorAll('input');
-console.log(inputs);
-inputs.forEach(function (input) {
-    console.log(input);
-});
+var character = "Rifqi";
+var age = 25;
+var isKasep = false;
+character = "Finaldy";
+age = 24;
+isKasep = true;
+var circle = function (diameter) {
+    return diameter * Math.PI;
+};
+console.log(circle(7.5));
