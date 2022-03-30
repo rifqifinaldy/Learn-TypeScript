@@ -1,35 +1,43 @@
-var character = "Rifqi";
-var age = 25;
-var isKasep = false;
-character = "Finaldy";
-age = 24;
-isKasep = true;
-var circle = function (diameter) {
-    return diameter * Math.PI;
+// Explicit Type
+var character;
+var age;
+var isLoggedIn;
+// masukin data
+age = 25;
+isLoggedIn = true;
+// arrays
+var names = [];
+names.push("rifqi");
+console.log("single type", names);
+// union types
+var mixed = [];
+mixed.push("Rifqi");
+mixed.push(25);
+mixed.push(true);
+console.log("mixed array", mixed);
+var uid;
+uid = "123";
+uid = 123;
+console.log("union single", uid);
+// Objects
+var animalOne;
+animalOne = { name: "lion", age: 20 };
+console.log("object", animalOne);
+var animalTwo;
+animalTwo = {
+    name: "maung",
+    age: 25
 };
-console.log(circle(7.5));
-// ---- Using Array ----
-// String
-var names = ["Rifqi", "Finaldy", "Lala"];
-names.push("Rifqi2");
-// Mixed
-var mixed = ["ken", 4, true];
-mixed.push("ryu");
-mixed.push(10);
-mixed[0] = 3;
-console.log("Array Case", names, mixed);
-// Object 
-var animal = {
-    name: 'Singa',
-    kind: 'Mamalia',
-    diet: 'carnivore'
-};
-// IT's WORKING
-animal.diet = 'herbivore';
-// IT"S NOT WORKING -> HARUS DEFINE DULU
-// animal.skills = ['hunting', 'climbing'];
-// Harus Sama
-// animal = {
-//     name : 'maung',
-//     kind : 'mamal',
-// }
+console.log("explicit object", animalTwo);
+// Any Type
+var height = 250;
+height = true;
+console.log("any variabel", height);
+var anyHeight = [];
+anyHeight.push(100);
+anyHeight.push("100");
+anyHeight.push(false);
+console.log("any array", anyHeight);
+var birds;
+birds = { name: "unta", age: 20 };
+console.log('any object', birds);

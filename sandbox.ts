@@ -1,46 +1,59 @@
-let character = "Rifqi";
-let age = 25;
-let isKasep = false;
+// Explicit Type
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-character = "Finaldy";
-age = 24;
-isKasep = true;
+// masukin data
+age = 25;
+isLoggedIn = true;
 
-const circle = (diameter: number) => {
-  return diameter * Math.PI;
+// arrays
+let names: string[] = [];
+names.push("rifqi");
+
+console.log("single type", names);
+
+// union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push("Rifqi");
+mixed.push(25);
+mixed.push(true);
+
+console.log("mixed array", mixed);
+
+let uid: string | number;
+uid = "123";
+uid = 123;
+console.log("union single", uid);
+
+// Objects
+let animalOne: object;
+animalOne = { name: "lion", age: 20 };
+console.log("object", animalOne);
+
+let animalTwo: {
+  name: string;
+  age: number;
 };
 
-console.log(circle(7.5));
+animalTwo = {
+  name: "maung",
+  age: 25,
+};
+console.log("explicit object", animalTwo);
 
-// ---- Using Array ----
-// String
-let names = ["Rifqi", "Finaldy", "Lala"];
-names.push("Rifqi2");
+// Any Type
+let height: any = 250;
 
-// Mixed
-let mixed = ["ken", 4, true];
+height = true;
+console.log("any variabel", height);
 
-mixed.push("ryu");
-mixed.push(10);
-mixed[0] = 3;
+let anyHeight: any[] = [];
+anyHeight.push(100);
+anyHeight.push("100");
+anyHeight.push(false);
+console.log("any array", anyHeight);
 
-console.log("Array Case", names, mixed);
-
-// Object 
-let animal = {
-    name : 'Singa',
-    kind : 'Mamalia',
-    diet : 'carnivore'
-}
-
-// IT's WORKING
-animal.diet = 'herbivore'; 
-
-// IT"S NOT WORKING -> HARUS DEFINE DULU
-// animal.skills = ['hunting', 'climbing'];
-
-// Harus Sama
-// animal = {
-//     name : 'maung',
-//     kind : 'mamal',
-// }
+let birds: { name: any; age: any };
+birds = {name: "unta", age: 20};
+console.log('any object', birds)
