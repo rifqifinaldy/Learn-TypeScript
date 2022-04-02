@@ -20,35 +20,16 @@ const list = new ListTemplate(ul);
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
+  //   Tuples
+  let values: [string, string, number];
+  values = [toFrom.value, details.value, amount.valueAsNumber]
+
   let doc: HasFormatter;
   if (type.value === "invoice") {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Invoice(...values);
   } else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    doc = new Payment(...values);
   }
 
   list.render(doc, type.value, "end");
 });
-
-// Enums
-enum ResourceType {BOOK, AUTHOR, FILM, DIRECTOR, PERSON}
-
-interface Resource<T> {
-    uid: number;
-    resourceType: ResourceType;
-    data: T;
-}
-
-const docONe: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.BOOK,
-    data: {title: 'Lord of the ring'}
-}
-
-const docTwo: Resource<object> = {
-    uid: 10,
-    resourceType: ResourceType.AUTHOR,
-    data: {name: 'Rifqi'}
-}
-
-console.log(docONe, docTwo)
