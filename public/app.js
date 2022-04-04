@@ -1,13 +1,13 @@
-import { Invoice } from "./classes/Invoices.js";
+import { Makanan } from "./classes/Makanan.js";
+import { Minuman } from "./classes/Minuman.js";
 import { ListTemplate } from "./classes/ListTemplate.js";
-import { Payment } from "./classes/Payment.js";
 // DOM
 const form = document.querySelector(".new-item-form");
 // Inputs
-const type = document.querySelector("#type");
-const toFrom = document.querySelector("#toFrom");
-const details = document.querySelector("#details");
-const amount = document.querySelector("#amount");
+const jenis = document.querySelector("#jenis");
+const nama = document.querySelector("#nama");
+const jam = document.querySelector("#jam");
+const porsi = document.querySelector("#porsi");
 // List Template Instance
 const ul = document.querySelector("ul");
 const list = new ListTemplate(ul);
@@ -15,13 +15,14 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     //   Tuples
     let values;
-    values = [toFrom.value, details.value, amount.valueAsNumber];
+    values = [nama.value, jam.value, porsi.valueAsNumber];
+    console.log(values);
     let doc;
-    if (type.value === "invoice") {
-        doc = new Invoice(...values);
+    if (jenis.value === "makanan") {
+        doc = new Makanan(...values);
     }
     else {
-        doc = new Payment(...values);
+        doc = new Minuman(...values);
     }
-    list.render(doc, type.value, "end");
+    list.render(doc, jenis.value, "end");
 });

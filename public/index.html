@@ -1,49 +1,47 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn Typescript</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Typescript</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1 class="page-title">4 Sehat 5 <span class="typescript">Typescript</span></h1>
+      <h4>Apa yang Anda Makan Hari Ini ?</h4>
+      <hr />
+      <form class="new-item-form">
+        <div class="field">
+          <label>Jenis : </label>
+          <select id="jenis">
+            <option value="makanan">Makanan</option>
+            <option value="minuman">Minuman</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Nama Makanan/Minuman</label>
+          <input type="text" id="nama" />
+        </div>
+        <div class="field">
+          <label>Jam Makan </label>
+          <input type="time" id="jam" />
+        </div>
+        <div class="field">
+          <label>Porsi : </label>
+          <input type="number" step="any" max="10" id="porsi" />
+        </div>
+        <button type="submit">Tambah</button>
+      </form>
+      <!-- output list -->
+      <ul class="item-list"></ul>
+    </div>
 
-  <div class="wrapper">
-    <h1>Finance Logger</h1>
+    <footer>
+      <a target="_blank" href="https://github.com/rifqifinaldy"
+        >Rifqi Finaldy</a
+      >
+    </footer>
 
-    <!-- output list -->
-    <ul class="item-list">
-      
-    </ul>
-  </div>
-
-  <footer>
-    <form class="new-item-form">
-      <div class="field">
-        <label>Type:</label>
-        <select id="type">
-          <option value="invoice">Invoice</option>
-          <option value="payment">Payment</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>To / From:</label>
-        <input type="text" id="tofrom">
-      </div>   
-      <div class="field">
-        <label>Details:</label>
-        <input type="text" id="details">
-      </div>
-      <div class="field">
-        <label>Amount (£):</label>
-        <input type="number" id="amount">
-      </div>
-      <button>Add</button>
-    </form>
-
-    <a target="_blank" href="https://github.com/rifqifinaldy">Rifqi Finaldy</a>
-  </footer>
-
-  <script type="module" src='./app.js'></script>
-  <script type="module" src='./test.js'></script>
-</body>
+    <script type="module" src="./app.js"></script>
+  </body>
 </html>
