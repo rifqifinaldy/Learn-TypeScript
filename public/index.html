@@ -8,7 +8,7 @@
   <body>
     <div class="wrapper">
       <h1 class="page-title">4 Sehat 5 <span class="typescript">Typescript</span></h1>
-      <h4>Apa yang Anda Makan Hari Ini ?</h4>
+      <h4 id="tanggal"></h4>
       <hr />
       <form class="new-item-form">
         <div class="field">
@@ -16,6 +16,7 @@
           <select id="jenis">
             <option value="makanan">Makanan</option>
             <option value="minuman">Minuman</option>
+            <option value="snack">Snack</option>
           </select>
         </div>
         <div class="field">
@@ -30,7 +31,7 @@
           <label>Porsi : </label>
           <input type="number" step="any" max="10" id="porsi" />
         </div>
-        <button type="submit">Tambah</button>
+        <button>Tambah</button>
       </form>
       <!-- output list -->
       <ul class="item-list"></ul>

@@ -1,7 +1,11 @@
 import { Makanan } from "./classes/Makanan.js";
 import { Minuman } from "./classes/Minuman.js";
 import { ListTemplate } from "./classes/ListTemplate.js";
+import { Snack } from "./classes/Snack.js";
 // DOM
+const dateTime = new Date();
+const tanggal = document.getElementById('tanggal');
+tanggal === null || tanggal === void 0 ? void 0 : tanggal.append("" + dateTime.toDateString());
 const form = document.querySelector(".new-item-form");
 // Inputs
 const jenis = document.querySelector("#jenis");
@@ -16,13 +20,15 @@ form.addEventListener("submit", (e) => {
     //   Tuples
     let values;
     values = [nama.value, jam.value, porsi.valueAsNumber];
-    console.log(values);
     let doc;
     if (jenis.value === "makanan") {
         doc = new Makanan(...values);
     }
-    else {
+    else if (jenis.value === "minuman") {
         doc = new Minuman(...values);
+    }
+    else {
+        doc = new Snack(...values);
     }
     list.render(doc, jenis.value, "end");
 });
